@@ -31,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../pythonProject2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Python.board">
@@ -146,6 +146,7 @@
       <workItem from="1662634082028" duration="2360000" />
       <workItem from="1662714285564" duration="2982000" />
       <workItem from="1662728808135" duration="68000" />
+      <workItem from="1662731745448" duration="6000" />
     </task>
     <servers />
   </component>
