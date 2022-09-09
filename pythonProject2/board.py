@@ -12,7 +12,12 @@ class Board(object):  #定义类
         '''显示棋盘'''
         for i in (0,3,6):
             print('       |       |       ')
-            print('   %d   |   %d   |   %d   '%(i,i+1,i+2))
+            if is_show_index:
+                print('   %d   |   %d   |   %d   ' % (i, i + 1, i + 2))
+            else:
+                print(
+                    '   %s   |   %s   |   %s   ' % (self.board_data[i], self.board_data[i + 1], self.board_data[i + 2]))
+
             print('       |       |       ')
             if i!=6:
                 print('-'*23)
@@ -23,4 +28,9 @@ if __name__ == '__main__': #测试模块初始化
     #print(board.board_data)
     #print(board.moveble_list)
     #测试打印棋盘
-    board.show_board()
+    board.show_board(True)
+    print('测试落子')
+    board.board_data[1] = 'X'
+    board.board_data[3] = '3'
+    board.show_board(False)
+
