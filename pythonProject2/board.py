@@ -31,6 +31,24 @@ class Board(object):  #定义类
         self.board_data[index] = chess
     #将下标移除
         self.moveble_list.remove(index)
+    def is_dogfall(self):
+        #返回true则说明已经是平局
+        return not self.moveble_list
+    def is_win(self,chess):
+    #判断参数里的落子是否已经获胜，已经获胜返回true
+    #准备所有的获胜方向
+        check_dirs = [
+            [0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]
+        ]
+    #准备好棋盘上当前的落子数据
+        date = self.board_data
+    #判断每一个方向是否都是当前参数棋子
+        for item in check_dirs:
+            if(date[item[0]] == chess and
+               date[item[1]] == chess and
+               date[item[2]] == chess):
+                return True
+        return False
 if __name__ == '__main__': #测试模块初始化
     # #棋盘测试
      board=Board()#创建棋盘对象
@@ -42,7 +60,17 @@ if __name__ == '__main__': #测试模块初始化
     # board.board_data[1] = 'X'
     # board.board_data[3] = '3'
     # board.show_board(False)
-board.move_down(1,'X')
-print(board,board.board_data)
-print(board.moveble_list)
+# board.move_down(1,'X')
+# print(board,board.board_data)
+# print(board.moveble_list)
+# board.show_board()
+#测试平局
+# print(board.is_dogfall())
+# board.moveble_list.clear() #模拟出没有剩余可落子位子
+# print(board.is_dogfall())
+#测试获胜
+board.move_down(0,'X')
+board.move_down(4,'X')
+board.move_down(8,'X')
 board.show_board()
+print(board.is_win('O'))
