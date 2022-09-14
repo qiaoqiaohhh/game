@@ -49,9 +49,17 @@ class Board(object):  #定义类
                date[item[2]] == chess):
                 return True
         return False
+    def reset_board(self):
+        '''重置棋盘数据'''
+        #清空剩余的可落子位置
+        self.moveble_list.clear()
+        for i in range(9):
+            self.board_data[i] =' '
+            self.moveble_list.append(i)
+        #重新放置棋盘数据
 if __name__ == '__main__': #测试模块初始化
     # #棋盘测试
-     board=Board()#创建棋盘对象
+    board=Board()#创建棋盘对象
     # #print(board.board_data)
     # #print(board.moveble_list)
     # #测试打印棋盘
@@ -69,8 +77,7 @@ if __name__ == '__main__': #测试模块初始化
 # board.moveble_list.clear() #模拟出没有剩余可落子位子
 # print(board.is_dogfall())
 #测试获胜
-board.move_down(0,'X')
-board.move_down(4,'X')
-board.move_down(8,'X')
-board.show_board()
-print(board.is_win('O'))
+#测试重置棋盘
+# board.reset_board()
+# print(board.board_data)
+# print(board.moveble_list)
